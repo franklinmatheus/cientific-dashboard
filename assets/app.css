@@ -1,0 +1,134 @@
+body {
+    background-color: rgb(29, 29, 29);
+    margin: 0em;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 1em;
+}
+
+.container {
+    position: relative;
+}
+
+.content {
+    color: rgb(220, 220, 220);
+    margin-left: 20%;
+    padding: 1em;
+}
+
+.section {
+    background-color: rgb(40, 40, 40);
+    padding: 0.3em;
+    border-radius: 0.3em;
+}
+
+.wrapper {
+    border-bottom: 1px solid rgba(95, 95, 95, 0.1);
+    background-color: rgb(40, 40, 40);
+    padding: 15px 20px;
+    position: sticky;
+    top: 0;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1;
+}
+
+.title-header {
+    font-weight: 900;
+    font-size: 32px;
+    line-height: 1;
+    margin: 6px 0 6px 10px;
+    display: inline-block;
+    vertical-align: top;
+    color: rgb(220, 220, 220);
+}
+
+.view-header {
+    font-weight: 800;
+    font-size: 18px;
+    line-height: 1;
+    margin: 6px 0 6px 10px;
+    display: inline-block;
+    vertical-align: top;
+    color: rgb(149, 149, 149);
+}
+
+.nav {
+    padding: 0em;
+    margin: 0em;
+}
+
+.sidebar {
+    width: 20%;
+    height: 100%;
+    background-color:rgb(40, 40, 40);
+    position: fixed;
+    overflow: auto
+}
+
+.sidebar-item {
+    display: block;
+    padding: 1em;
+    text-align: left;
+    border: none;
+    white-space: normal;
+    float: none;
+    outline: 0;
+    text-decoration: none;
+    color: rgb(220, 220, 220);
+    font-size: 14px;
+}
+
+.sidebar-title {
+    color: rgb(139, 139, 139);
+    margin: 0em;
+    padding: 1em;
+    font-size: 10px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+.sidebar-item:hover {
+    background-color: rgb(50, 50, 50);
+    color: rgb(10, 189, 227);
+}
+
+.sidebar-item.active {
+    color:rgb(10, 189, 227);
+    font-weight: 600;
+    background-color: rgb(50, 50, 50);
+}
+
+button + button {
+    margin-left: 0.5em;
+}
+
+.title-section {
+    font-weight: 900;
+    font-size: 32px;
+    line-height: 1;
+    margin: 0 0 0.5em;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.tabs-container {
+    width: 100%;
+    margin-bottom: 1em;
+    background-color: transparent;
+}
+
+.tab {
+    color: rgb(139, 139, 139) !important;
+    background-color: transparent !important;
+    padding: 1em !important;
+    border: none !important;
+    font-family: Verdana, Arial, Helvetica, sans-serif !important;
+    font-size: 12px !important;
+    align-items: center;
+    justify-content: center;
+}
+.tab-selected {
+    color: rgb(10, 189, 227) !important;
+    font-size: 14px !important;
+    font-weight: 600;
+}
