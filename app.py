@@ -28,7 +28,10 @@ app.layout = html.Div(
         dcc.Location(id='url', refresh=False),
         Header(),
         Sidebar(),
-        Home(scopus)
+        html.Div(
+            className="content",
+            id="content"
+        ),
     ]
 )
 
