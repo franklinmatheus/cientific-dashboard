@@ -1,5 +1,6 @@
 # import of external libraries
-import dash
+from dash import Dash
+from dash.dependencies import Input, Output
 import dash_core_components as dcc
 import dash_html_components as html
 import pandas as pd
@@ -16,7 +17,7 @@ from pages.Graphs import Graphs
 from pages.Textual import Textual
 from pages.Requirements import Requirements
 
-app = dash.Dash(__name__)
+app = Dash(__name__)
 server = app.server
 
 scopus = pd.read_excel("./data/data_cleaned.xlsx",index_col=0)
@@ -35,8 +36,8 @@ app.layout = html.Div(
     ]
 )
 
-@app.callback(dash.dependencies.Output('content', 'children'),
-              [dash.dependencies.Input('url', 'pathname')])
+@app.callback(Output('content', 'children'),
+              [Input('url', 'pathname')])
 def render(pathname):
     if pathname == "/":
         return Home(scopus)
@@ -50,6 +51,6 @@ def render(pathname):
         return Textual(scopus)
     elif pathname == "/requisitos":
         return Requirements(scopus)
-        
+
 if __name__ == '__main__':
     app.run_server(debug=True)

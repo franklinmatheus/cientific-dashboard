@@ -1,4 +1,4 @@
-from components.analysis.ArticlesPerLanguage import ArticlesPerLanguage
+from components.analysis.ArticlesPerConference import ArticlesPerConference
 import dash_html_components as html
 import dash_core_components as dcc
 
@@ -8,10 +8,10 @@ def Multivariate(df):
             className='tabs-container',
             children=[
                 dcc.Tab(
-                    label="Países",
+                    label="Conferências",
                     className='tab',
                     selected_className='tab-selected',
-                    children=[html.H3("Artigos por país")]
+                    children=[ArticlesPerConference(df)]
                 ),
                 dcc.Tab(
                     label="Instituições",

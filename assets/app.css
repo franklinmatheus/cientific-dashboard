@@ -1,7 +1,7 @@
 body {
     background-color: rgb(29, 29, 29);
     margin: 0em;
-    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-family: Verdana, Arial, Helvetica, sans-serif !important;
     font-size: 1em;
 }
 
@@ -17,8 +17,23 @@ body {
 
 .section {
     background-color: rgb(40, 40, 40);
-    padding: 0.3em;
+    padding: 2em;
     border-radius: 0.3em;
+}
+
+.section .section-title {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    font-size: 1.5em;
+    font-weight: 900;
+    border-bottom: 1px solid rgba(95, 95, 95, 0.1);
+}
+
+.section .section-text {
+    font-family: Verdana, Arial, Helvetica, sans-serif;
+    margin-top: 2em;
+    margin-bottom: 2em;
 }
 
 .wrapper {

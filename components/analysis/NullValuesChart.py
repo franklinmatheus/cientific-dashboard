@@ -28,5 +28,5 @@ def NullValuesChart(df):
 
     return html.Div(
         className="section",
-        children=[dcc.Graph(figure=fig)]
+        children=[dcc.Graph(id="nullvalueschart",figure=fig)]
     )
