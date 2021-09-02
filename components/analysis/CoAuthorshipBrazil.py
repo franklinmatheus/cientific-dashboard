@@ -43,9 +43,14 @@ def CoAuthorshipBrazil(df):
             )
         ],
         layout=go.Layout(
-            title='Rede de Coautoria Brasileira',
             showlegend=False,
-            height=800,
+            margin=dict(
+                l=50,
+                r=50,
+                b=0,
+                t=0,
+                pad=2
+            ),
             plot_bgcolor='rgb(40,40,40)',
             paper_bgcolor='rgb(40,40,40)',
             xaxis=dict(showgrid=False, zeroline=False, showticklabels=False),
@@ -59,5 +64,8 @@ def CoAuthorshipBrazil(df):
 
     return html.Div(
         className="section",
-        children=[dcc.Graph(id="coauthorshipglobal",figure=fig)]
+        children=[
+            html.H3("Rede de Coautoria Brasileira",className="section-title"),
+            dcc.Graph(id="coauthorshipglobal",figure=fig)
+        ]
     )

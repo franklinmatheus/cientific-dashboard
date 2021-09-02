@@ -11,18 +11,27 @@ def PublicationsPerYear(df):
             marker_color="rgb(46, 134, 222)"
         ),
     ],
-    layout={
-        "barmode":"stack",
-        "title_text":"Publicações por Ano",
-        "plot_bgcolor": "rgb(40,40,40)",
-        "paper_bgcolor": "rgb(40,40,40)",
-        "font": {
-            "family":"Verdana, Arial, Helvetica, sans-serif",
-            "color": "rgb(220, 220, 220)"
-        }
-    })
+    layout=go.Layout(
+            margin=dict(
+                l=50,
+                r=50,
+                b=50,
+                t=50,
+                pad=2
+            ),
+            plot_bgcolor='rgb(40,40,40)',
+            paper_bgcolor='rgb(40,40,40)',
+            font= {
+                "family":"Verdana, Arial, Helvetica, sans-serif",
+                "color": "rgb(220, 220, 220)"
+            }
+        )
+    )
 
     return html.Div(
         className="section",
-        children=[dcc.Graph(figure=fig)]
+        children=[
+            html.H3("Publicações por Ano",className="section-title"),
+            dcc.Graph(figure=fig)
+        ]
     )

@@ -57,21 +57,29 @@ def ArticlesPerConference(df):
             labels=compact_names,
         ),
     ],
-    layout={
-        "title_text":"Artigos por Conferência",
-        "plot_bgcolor": "rgb(40,40,40)",
-        "paper_bgcolor": "rgb(40,40,40)",
-        "font": {
-            "family":"Verdana, Arial, Helvetica, sans-serif",
-            "color": "rgb(220, 220, 220)"
-        }
-    })
+    layout=go.Layout(
+            margin=dict(
+                l=50,
+                r=50,
+                b=50,
+                t=50,
+                pad=2
+            ),
+            plot_bgcolor='rgb(40,40,40)',
+            paper_bgcolor='rgb(40,40,40)',
+            font= {
+                "family":"Verdana, Arial, Helvetica, sans-serif",
+                "color": "rgb(220, 220, 220)"
+            }
+        )
+    )
 
     table_values = [{"Nome":names[i],"Quantidade de artigos":values[i]} for i in range(9,len(names[9:]))]
 
     return html.Div(
         className="section",
         children=[
+            html.H3("Artigos por Conferência",className="section-title"),
             dcc.Graph(figure=fig),
             html.H3("Outras Conferências",className="section-title"),
             html.P("Aqui, as conferências que foram agrupadas no gráfico acima são listadas.",className="section-text"),

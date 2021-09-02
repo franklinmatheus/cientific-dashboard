@@ -37,11 +37,16 @@ def CoAuthorship(df):
             )
         ],
         layout=go.Layout(
-            title='Rede de Coautoria Global',
             showlegend=False,
-            height=800,
             plot_bgcolor='rgb(40,40,40)',
             paper_bgcolor='rgb(40,40,40)',
+            margin=dict(
+                l=50,
+                r=50,
+                b=0,
+                t=0,
+                pad=2
+            ),
             xaxis=dict(showgrid=False, zeroline=False, showticklabels=False),
             yaxis=dict(showgrid=False, zeroline=False, showticklabels=False),
             font= {
@@ -53,5 +58,8 @@ def CoAuthorship(df):
 
     return html.Div(
         className="section",
-        children=[dcc.Graph(id="coauthorshipbrazil",figure=fig)]
+        children=[
+            html.H3("Rede de Coautoria Global",className="section-title"),
+            dcc.Graph(id="coauthorshipbrazil",figure=fig)
+        ]
     )

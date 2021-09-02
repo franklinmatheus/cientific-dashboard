@@ -15,18 +15,28 @@ def NullValuesChart(df):
             marker_color="rgb(238, 82, 83)"
         ),
     ],
-    layout={
-        "barmode":"stack",
-        "title_text":"Valores Nulos e Válidos no Dataset",
-        "plot_bgcolor": "rgb(40,40,40)",
-        "paper_bgcolor": "rgb(40,40,40)",
-        "font": {
-            "family":"Verdana, Arial, Helvetica, sans-serif",
-            "color": "rgb(220, 220, 220)"
-        }
-    })
+    layout=go.Layout(
+            barmode='stack',
+            margin=dict(
+                l=50,
+                r=50,
+                b=50,
+                t=50,
+                pad=2
+            ),
+            plot_bgcolor='rgb(40,40,40)',
+            paper_bgcolor='rgb(40,40,40)',
+            font= {
+                "family":"Verdana, Arial, Helvetica, sans-serif",
+                "color": "rgb(220, 220, 220)"
+            }
+        )
+    )
 
     return html.Div(
         className="section",
-        children=[dcc.Graph(id="nullvalueschart",figure=fig)]
+        children=[
+            html.H3("Valores Nulos no Dataset",className="section-title"),
+            dcc.Graph(id="nullvalueschart",figure=fig)
+        ]
     )

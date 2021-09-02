@@ -28,6 +28,7 @@ body {
     font-size: 1.5em;
     font-weight: 900;
     border-bottom: 1px solid rgba(95, 95, 95, 0.1);
+    padding-bottom: 0.5em;
 }
 
 .section .section-text {
