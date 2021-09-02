@@ -78,7 +78,6 @@ def ArticlesPerConference(df):
             dash_table.DataTable(
                 columns=[{"name":"Nome","id":"Nome"},{"name":"Quantidade de artigos","id":"Quantidade de artigos"}],
                 data=table_values,
-                sort_action='native',
                 style_header={
                     'backgroundColor': 'rgb(29, 29, 29)',
                     'color': 'rgb(220, 220, 220)',
@@ -89,8 +88,19 @@ def ArticlesPerConference(df):
                     'backgroundColor': 'rgb(40, 40, 40)',
                     'color': 'rgb(220, 220, 220)',
                     'border': '1px solid rgba(95, 95, 95, 0.1)',
-                    'text-align': 'left'
-                }
+                    'text-align': 'left',
+                    
+                },
+                style_data_conditional=[
+                    {
+                        'if': {
+                            'state': 'selected'  # 'active' | 'selected'
+                        },
+                        'backgroundColor': 'rgba(10, 189, 227, 0.9)',
+                        'border': '1px solid rgba(10, 189, 227, 0.9)',
+                        'color': 'rgb(40, 40, 40)'
+                    }
+                ]
             )
         ]
     )

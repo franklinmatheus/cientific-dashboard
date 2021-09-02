@@ -20,7 +20,7 @@ from pages.Requirements import Requirements
 app = Dash(__name__)
 server = app.server
 
-scopus = pd.read_excel("./data/data_cleaned.xlsx",index_col=0)
+scopus = pd.read_excel("./data/data_cleaned.xlsx")
 
 # main page layout
 app.layout = html.Div(

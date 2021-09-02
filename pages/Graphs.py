@@ -1,3 +1,5 @@
+from components.analysis.CoAuthorshipBrazil import CoAuthorshipBrazil
+from components.analysis.CoAuthorship import CoAuthorship
 import dash_html_components as html
 import dash_core_components as dcc
 
@@ -7,16 +9,16 @@ def Graphs(df):
             className='tabs-container',
             children=[
                 dcc.Tab(
-                    label="Tab 1",
+                    label="Rede de Coautoria Global",
                     className='tab',
                     selected_className='tab-selected',
-                    children=[html.H1("Tab 1")]
+                    children=[CoAuthorship(df[['Authors','Author(s) ID']])]
                 ),
                 dcc.Tab(
-                    label="Tab 2",
+                    label="Rede de Coautoria Brasileira",
                     className='tab',
                     selected_className='tab-selected',
-                    children=[html.H1("Tab 2")]
+                    children=[CoAuthorshipBrazil(df[['Authors','Author(s) ID','Affiliations']])]
                 )
             ]
         )
