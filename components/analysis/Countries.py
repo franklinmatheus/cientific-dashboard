@@ -2,7 +2,6 @@ import plotly.graph_objects as go
 import plotly.express as px
 import dash_html_components as html
 import dash_core_components as dcc
-from urllib.request import urlopen
 import json
 import pycountry
 
@@ -30,7 +29,7 @@ def Countries(df):
             locations = data_country,
             locationmode = 'country names',
             autocolorscale = False,
-            colorscale = 'Blues',
+            colorscale = 'Reds',
             text= data_country,
             z=data_count,
             marker = dict(line = dict(color = 'rgb(40,40,40)',width = 1)),
@@ -44,9 +43,8 @@ def Countries(df):
                 b=0,
                 t=0
             ),
-            geo=dict(bgcolor='rgb(40,40,40)',coastlinecolor='rgb(40,40,40)'),
-            #plot_bgcolor='rgb(40,40,40)',
             paper_bgcolor='rgb(40,40,40)',
+            geo=dict(bgcolor='rgb(40,40,40)',oceancolor='rgb(120, 179, 204)',showframe=False,showocean=True),
             font= {
                 "family":"Verdana, Arial, Helvetica, sans-serif",
                 "color": "rgb(220, 220, 220)"
