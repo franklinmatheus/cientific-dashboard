@@ -1,3 +1,4 @@
+from components.analysis.KeywordsEvolution import KeywordsEvolution
 import dash_html_components as html
 import dash_core_components as dcc
 from components.analysis.PublicationPerYear import PublicationsPerYear
@@ -14,10 +15,10 @@ def Temporal(df):
                     children=[PublicationsPerYear(df)]
                 ),
                 dcc.Tab(
-                    label="Tab 2",
+                    label="Evolução de Keywords",
                     className='tab',
                     selected_className='tab-selected',
-                    children=[html.H1("Tab 2")]
+                    children=[KeywordsEvolution(df)]
                 )
             ]
         )

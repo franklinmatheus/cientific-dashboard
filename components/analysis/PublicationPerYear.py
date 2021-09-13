@@ -1,6 +1,7 @@
 import plotly.graph_objects as go
 import dash_core_components as dcc
 import dash_html_components as html
+from pages.Requirements import reqs
 
 def PublicationsPerYear(df):
     fig = go.Figure(
@@ -32,6 +33,8 @@ def PublicationsPerYear(df):
         className="section",
         children=[
             html.H3("Publicações por Ano",className="section-title"),
-            dcc.Graph(figure=fig)
+            dcc.Graph(figure=fig),
+            html.H3("Requisitos Informacionais",className="section-title"),
+            html.Div(className="req-div",children=[html.H3('RI04',className="req-id"),html.P(reqs['RI04'],className="req-description")])
         ]
     )

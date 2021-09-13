@@ -2,6 +2,7 @@ import plotly.graph_objects as go
 import dash_core_components as dcc
 import dash_html_components as html
 import dash_table
+from pages.Requirements import reqs
 
 def ArticlesPerConference(df):
     conferences = df['Conference name']
@@ -109,6 +110,8 @@ def ArticlesPerConference(df):
                         'color': 'rgb(40, 40, 40)'
                     }
                 ]
-            )
+            ),
+            html.H3("Requisitos Informacionais",className="section-title"),
+            html.Div(className="req-div",children=[html.H3('RI01',className="req-id"),html.P(reqs['RI01'],className="req-description")])
         ]
     )

@@ -2,6 +2,7 @@ import plotly.graph_objects as go
 import dash_core_components as dcc
 import dash_html_components as html
 from preprocess import coauthorshipNetwork
+from pages.Requirements import reqs
 
 def CoAuthorshipBrazil(df):
     data = df.copy()
@@ -35,7 +36,7 @@ def CoAuthorshipBrazil(df):
                     size=10,
                     colorbar=dict(
                         thickness=15,
-                        title='Node Connections',
+                        title='Coautores',
                         xanchor='left',
                         titleside='right'
                     )
@@ -66,6 +67,9 @@ def CoAuthorshipBrazil(df):
         className="section",
         children=[
             html.H3("Rede de Coautoria Brasileira",className="section-title"),
-            dcc.Graph(id="coauthorshipglobal",figure=fig)
+            dcc.Graph(id="coauthorshipglobal",figure=fig),
+            html.H3("Requisitos Informacionais",className="section-title"),
+            html.Div(className="req-div",children=[html.H3('RI09',className="req-id"),html.P(reqs['RI09'],className="req-description")]),
+            html.Div(className="req-div",children=[html.H3('RI10',className="req-id"),html.P(reqs['RI10'],className="req-description")])
         ]
     )

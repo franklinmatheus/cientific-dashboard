@@ -4,6 +4,7 @@ import dash_html_components as html
 import dash_core_components as dcc
 import json
 import pycountry
+from pages.Requirements import reqs
 
 def Countries(df):
     with open('data/custom.geo.json') as file:
@@ -56,6 +57,9 @@ def Countries(df):
         className="section",
         children=[
             html.H3("Países que mais aparecem",className="section-title"),
-            dcc.Graph(figure=fig)
+            dcc.Graph(figure=fig),
+            html.H3("Requisitos Informacionais",className="section-title"),
+            html.Div(className="req-div",children=[html.H3('RI02',className="req-id"),html.P(reqs['RI02'],className="req-description")]),
+            html.Div(className="req-div",children=[html.H3('RI03',className="req-id"),html.P(reqs['RI03'],className="req-description")])
         ]
     )

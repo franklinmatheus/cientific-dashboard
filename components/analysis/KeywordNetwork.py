@@ -1,12 +1,12 @@
 import plotly.graph_objects as go
 import dash_core_components as dcc
 import dash_html_components as html
-from preprocess import coauthorshipNetwork
+from preprocess import keywordsNetwork
 from pages.Requirements import reqs
 
-def CoAuthorship(df):
+def KeywordNetwork(df):
     data = df.copy()
-    node_x, node_y, edge_x, edge_y, node_size, node_text = coauthorshipNetwork(data,mincoauthor=8)
+    node_x, node_y, edge_x, edge_y, node_size, node_text = keywordsNetwork(data,mincokeywords=15)
 
     fig = go.Figure(
         data=[
@@ -26,11 +26,10 @@ def CoAuthorship(df):
                     showscale=True,
                     colorscale='Bluered',
                     reversescale=True,
-                    color=[],
                     size=10,
                     colorbar=dict(
                         thickness=15,
-                        title='Coautores',
+                        title='Número de co-keywords',
                         xanchor='left',
                         titleside='right'
                     )
@@ -60,10 +59,10 @@ def CoAuthorship(df):
     return html.Div(
         className="section",
         children=[
-            html.H3("Rede de Coautoria Global",className="section-title"),
-            dcc.Graph(id="coauthorship",figure=fig),
+            html.H3("Rede de Keywords",className="section-title"),
+            dcc.Graph(id="keywordsnetwork",figure=fig),
             html.H3("Requisitos Informacionais",className="section-title"),
-            html.Div(className="req-div",children=[html.H3('RI07',className="req-id"),html.P(reqs['RI07'],className="req-description")]),
-            html.Div(className="req-div",children=[html.H3('RI08',className="req-id"),html.P(reqs['RI08'],className="req-description")])
+            html.Div(className="req-div",children=[html.H3('RI11',className="req-id"),html.P(reqs['RI11'],className="req-description")]),
+            html.Div(className="req-div",children=[html.H3('RI12',className="req-id"),html.P(reqs['RI12'],className="req-description")])
         ]
     )

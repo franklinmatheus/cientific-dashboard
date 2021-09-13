@@ -1,3 +1,6 @@
+from components.analysis.KeywordNetwork import KeywordNetwork
+from components.analysis.KeywordsEvolution import KeywordsEvolution
+from components.analysis.WordCloud import WordCloudView
 import dash_html_components as html
 import dash_core_components as dcc
 
@@ -7,16 +10,16 @@ def Textual(df):
             className='tabs-container',
             children=[
                 dcc.Tab(
-                    label="Tab 1",
+                    label="Evolução de Keywords",
                     className='tab',
                     selected_className='tab-selected',
-                    children=[html.H1("Tab 1")]
+                    children=[KeywordNetwork(df)]
                 ),
                 dcc.Tab(
-                    label="Tab 2",
+                    label="Nuvem de palavras",
                     className='tab',
                     selected_className='tab-selected',
-                    children=[html.H1("Tab 2")]
+                    children=[WordCloudView(df)]
                 )
             ]
         )

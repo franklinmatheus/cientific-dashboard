@@ -22,7 +22,7 @@ body {
 }
 
 .section .section-title {
-    margin-top: 1em;
+    margin-top: 0.5em;
     margin-bottom: 1em;
     font-family: Verdana, Arial, Helvetica, sans-serif;
     font-size: 1.5em;
@@ -147,4 +147,60 @@ button + button {
     color: rgb(10, 189, 227) !important;
     font-size: 14px !important;
     font-weight: 600;
+}
+
+.wordcloud {
+    width: 100%;
+}
+
+.req-div {
+    background-color: rgb(58, 58, 58);
+    padding: 0.5em;
+    border-radius: 0.3em;
+    border: 1px solid rgba(95, 95, 95, 0.1);
+}
+
+.req-div:hover {
+    background-color: rgb(46, 46, 46);
+    border: 1px solid rgba(131, 131, 131, 0.1);
+}
+
+.req-id {
+    margin: 0em;
+    color: rgb(10, 189, 227);
+    margin-bottom: 0.5em;
+}
+
+.req-description {
+    margin: 0em;
+}
+
+.req-div + .req-div {
+    margin-top: 1em;
+}
+
+.var-div {
+    background-color: rgb(58, 58, 58);
+    padding: 0.5em;
+    border-radius: 0.3em;
+    border: 1px solid rgba(95, 95, 95, 0.1);
+}
+
+.var-div:hover {
+    background-color: rgb(46, 46, 46);
+    border: 1px solid rgba(131, 131, 131, 0.1);
+}
+
+.var-div + .var-div {
+    margin-top: 1em;
+}
+
+.var-span {
+    margin: 0em;
+    font-size: 0.8em;
+    background-color: rgb(10, 189, 227);
+    border-radius: 0.5em;
+    padding: 0.2em;
+    margin-left: 0.5em;
+    color: rgb(46, 46, 46);
 }
